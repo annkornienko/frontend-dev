@@ -1,12 +1,27 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" ng-app = "appTest">
 <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
+    <base href="/" target="_blank" />
     <title></title>
+    <!-- CSS -->
+    <link rel="stylesheet" href="/css/style.css" media="screen" title="no title">
 </head>
 <body>
-<h1>Hello World!</h1>
+  <!-- angular dynamic content -->
+  <div ng-view></div>
+  <!-- JS -->
+  <script src="lib/angular/angular.js"></script>
+  <script src="lib/angular-route/angular-route.min.js"></script>
+
+  <!-- ANGULAR CUSTOM -->
+  <script src="js/app.js" charset="utf-8"></script>
+  <script src="js/controllers.js" charset="utf-8"></script>
+  <script src="js/routes.js" charset="utf-8"></script>
+  <script src="js/services.js" charset="utf-8"></script>
+
+
 </body>
 </html>

@@ -1,0 +1,47 @@
+<div class="tableInvoices" ng-controller = "ListInvoicesCtrl">
+  <table>
+    <tbody>
+      <tr>
+        <td>
+          ID
+        </td>
+        <td>
+          CustomerID
+        </td>
+        <td>
+          Discount
+        </td>
+        <td>
+          Total
+        </td>
+        <td>
+          CreatedAt
+        </td>
+        <td>
+          UpdatedAt
+        </td>
+      </tr>
+
+      <tr ng-repeat = "invoice in invoices" ng-click = "handleClickTR($event)"  class="clickable-row">
+        <td>
+          {{invoice.id}}
+        </td>
+        <td>
+          {{invoice.customer_id}}
+        </td>
+        <td>
+          {{invoice.discount}}
+        </td>
+        <td>
+          {{invoice.total}}
+        </td>
+        <td>
+          {{invoice.createdAt | date:"MM/dd/yyyy 'at' h:mma" }}
+        </td>
+        <td>
+          {{invoice.updatedAt | date:"MM/dd/yyyy 'at' h:mma" }}
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</div>

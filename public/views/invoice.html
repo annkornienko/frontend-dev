@@ -1,0 +1,67 @@
+<span>
+  <a href="/">&#8656;</a>
+</span>
+<table>
+  <thead>
+    <tr>
+      <th ng-repeat = "index in idx">
+        {{index}}
+      </th>
+      <th>
+        modify
+      </th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>
+        <div ng-hide="editingData[invoice.id]">{{invoice.id}}</div>
+        <div ng-show="editingData[invoice.id]"><input type="text" ng-model="invoice.id"  ></div>
+      </td>
+      <td>
+        <div ng-hide="editingData['customer_id']">{{invoice.customer_id}}</div>
+        <div ng-show="editingData['customer_id']"><input type="text" ng-model="invoice.customer_id" ng-blur = "modify($event,'customer_id',invoice.customer_id)" /></div>
+      </td>
+      <td>
+        <div ng-hide="editingData['discount']">{{invoice.discount}}</div>
+        <div ng-show="editingData['discount']"><input type="text" ng-model="invoice.discount" ng-blur = "modify($event,'discount',invoice.discount)"/></div>
+      </td>
+      <td>
+        <div ng-hide="editingData['total']">{{invoice.total}}</div>
+        <div ng-show="editingData['total']"><input type="text" ng-model="invoice.total" ng-blur = "modify($event,'total',invoice.total)"/></div>
+      </td>
+      <td>
+        {{invoice.createdAt | date:"MM/dd/yyyy 'at' h:mma" }}
+      </td>
+      <td>
+        {{invoice.updatedAt | date:"MM/dd/yyyy 'at' h:mma" }}
+
+      </td>
+      <td  style="cursor:pointer" id ="modify" ng-click = "modifyInvoices(invoice)">
+        <a href="#">&#128393;</a>
+      </td>
+    </tr>
+  </tbody>
+</table>
+
+<h2>Additional information about Customer: </h1>
+<div class="" ng-hide = "customerExist">
+  <h1>The incorrect data</h1>
+</div>
+<table  class="table-customer" ng-show = "customerExist" >
+  <thead>
+    <tr>
+      <th ng-repeat = "index in idxCustomer" >
+        {{index}}
+      </th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td ng-repeat = "value in valCustomer track by $index">
+        {{value}}
+      </td>
+    </tr>
+
+  </tbody>
+</table>
